@@ -1,7 +1,7 @@
 import pandas as pd
 from datasets import load_dataset_builder, Dataset
 from datasets import load_dataset, load_from_disk
-from ticket import TicketAPI
+from src.ticket import TicketAPI
 import logging
 logging.getLogger().setLevel(logging.INFO)
 
