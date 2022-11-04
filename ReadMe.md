@@ -14,5 +14,8 @@ In order to use Zammad with the user (that has the rights mentioned above) add y
 to "app_config.py" at the marked position
 
 ## Step 4 - run the program
-In order to run the program type "python import_tickets_zammad.py"
+In order to run the program you will have to install the requirements first.
+Step 1 : Naviagte to the path where your github repo lives (e.g. (base) t2ea@razor-4:~/Desktop/coding_challenge$)
+Step 2: type "pip install -r requirements.txt" into the console
+Step 3: type "python import_tickets_zammad.py" into the console
 
