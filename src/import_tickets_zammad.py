@@ -2,6 +2,7 @@ import pandas as pd
 from datasets import load_dataset_builder, Dataset
 from datasets import load_dataset, load_from_disk
 from src.ticket import TicketAPI
+import os
 import logging
 logging.getLogger().setLevel(logging.INFO)
 
@@ -12,14 +13,19 @@ class TicketCreator:
         self.dataset_name_local = dataset_name_local
         self.dataset_name_huggingface = dataset_name_huggingface
 
-    def download_ds(self):
-        ds_name = self.dataset_name_huggingface
-        ds_builder = load_dataset_builder(ds_name)
-        print(ds_builder.info.description)
+    def download_ds(self, path="src/consumer_complaints_ds"):
 
-        dataset = load_dataset(ds_name, split="train")
-        dataset.save_to_disk(self.dataset_name_local)
-        logging.info("Downloaded dataset")
+        if not os.path.isdir(path):
+            logging.info("Downloading dataset")
+            ds_name = self.dataset_name_huggingface
+            ds_builder = load_dataset_builder(ds_name)
+            print(ds_builder.info.description)
+
+            dataset = load_dataset(ds_name, split="train")
+            dataset.save_to_disk(self.dataset_name_local)
+            logging.info("Downloading dataset completed")
+        else:
+            logging.info("Dataset is already locally available")
 
     def delete_all_existing_tickets(self, ticket_api:TicketAPI):
         tickets = ticket_api.list_tickets()
