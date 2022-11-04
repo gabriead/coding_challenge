@@ -1,10 +1,9 @@
 from ticket import TicketAPI
 from import_tickets_zammad import TicketCreator
 from sentiment_classifier import SentimentClassifier
-import os
 import logging
 logging.getLogger().setLevel(logging.INFO)
-from src.app_config import setup
+from app_config import setup
 
 setup()
 ticket_api = TicketAPI()

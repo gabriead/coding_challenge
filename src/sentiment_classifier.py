@@ -1,4 +1,4 @@
-from src.ticket import TicketAPI
+from ticket import TicketAPI
 from pysentimiento import create_analyzer
 import logging
 logging.getLogger().setLevel(logging.INFO)
