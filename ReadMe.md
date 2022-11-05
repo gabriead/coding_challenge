@@ -21,8 +21,8 @@ Create a local environment where the requirements.txt can be installed and activ
 
 ## Step 5 - run the program
 In order to run the program you will have to install the requirements first.
-Step 1 : Navigate to the src path where your Github repo lives (e.g. ~/Desktop/coding_challenge/src)
-Step 2: type "pip install -r requirements.txt" into the console
-Step 3: type "python import_tickets_zammad.py" into the console
+Step 1 : Navigate to the src path where your Github repo lives (e.g. ~/Desktop/coding_challenge)
+Step 2: type "pip install -r requirements.txt" into the console. Be careful, the requirements file is in the root folder!
+Step 3: Then change directory into /src. Type "python import_tickets_zammad.py" into the console
 Voila you executed the application.
 
